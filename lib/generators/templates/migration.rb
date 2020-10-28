@@ -2,7 +2,7 @@ class CreateRackCasSessions < ActiveRecord::Migration
   def self.up
     create_table :sessions do |t|
       t.string :session_id, :null => false
-      t.string :cas_ticket
+      t.string :cas_ticket, limit: 1023
       t.text :data
       t.timestamps
     end
